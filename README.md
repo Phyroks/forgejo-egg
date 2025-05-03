@@ -1,51 +1,47 @@
 # Forgejo
 
-[Forgejo](https://forgejo.org/) ist eine leichtgewichtige, selbstgehostete Software-Forgelösung. Sie ist einfach zu installieren, pflegeleicht und bietet eine vollständige Plattform für das Hosting von Git-Repositories.
+[Forgejo](https://forgejo.org/) is a lightweight, self-hosted software forge. It's easy to install, low-maintenance, and provides a full platform for hosting Git repositories.
 
-## Unterstützte Versionen
+## Supported Versions
 
-Du kannst die zu installierende Version über die `Version`-Variable festlegen. Die folgenden Werte sind möglich:
+You can set the version to install using the `Version` variable. The following values are supported:
 
-- `latest`  – neueste stabile Version (Standard)
-- `nightly` – aktuelle Nightly-Build
-- `x.y.z`   – spezifische Forgejo-Version (z. B. `1.20.4`)
+- `latest`  – latest stable release (default)
+- `nightly` – current nightly build
+- `x.y.z`   – specific Forgejo version (e.g., `1.20.4`)
 
-## Server-Ports
+## Server Ports
 
-Folgende Ports werden standardmäßig vom Server verwendet:
+The server uses the following default ports:
 
-| Port | Standardwert |
-|------|--------------|
-| App  | 3000         |
-| SSH  | 20815        |
+| Port | Default |
+|------|---------|
+| App  | 3000    |
+| SSH  | 20815   |
 
-## Startparameter
+## Startup Command
 
-Der Server wird mit folgendem Befehl gestartet:
+The server starts with the following command:
 
 ```bash
 ./forgejo web -p {{SERVER_PORT}} -c ./app.ini
 ```
 
-## Konfiguration
+## Configuration
 
-Die Konfiguration erfolgt über die Datei `custom/app.ini`, die bei der ersten Installation automatisch erzeugt wird, falls sie noch nicht vorhanden ist.
+Configuration is handled via the `custom/app.ini` file. This file is automatically created during the initial installation if it does not already exist.
 
-### Wichtige Konfigurationswerte:
+### Key Configuration Values:
 
-- `LOCAL_ROOT_URL` – Basis-URL für die Instanz
-- `DOMAIN` – Domain/IP-Adresse des Servers
-- `DISABLE_SSH` – SSH deaktivieren (true/false)
-- `SSH_PORT` – Port für Git+SSH-Zugriffe
+- `LOCAL_ROOT_URL` – Base URL of the instance
+- `DOMAIN` – Domain or IP address of the server
+- `DISABLE_SSH` – Disable SSH feature (true/false)
+- `SSH_PORT` – Port used for Git+SSH access
 
 ## Installation (Pterodactyl Egg)
 
-Das Installationsskript ermittelt automatisch die neueste Version und die passende Architektur (`amd64` oder `arm64`) und installiert Forgejo in der Serverumgebung. Weitere Details zum Installationsprozess findest du im Egg.
+The installation script automatically fetches the latest version and correct architecture (`amd64` or `arm64`) and installs Forgejo in the server environment. For more technical details, see the provided Egg.
 
-## Lizenz
+## License
 
-Forgejo steht unter der [MIT-Lizenz](https://forgejo.org/#license).
-
----
-
-> **Hinweis:** Dieses Projekt verwendet ein automatisch generiertes [Pterodactyl](https://pterodactyl.io/)-Egg. Alle Details zur Software findest du auf der offiziellen Website: [forgejo.org](https://forgejo.org/)
+Forgejo is licensed under the [MIT License](https://forgejo.org/#license).
